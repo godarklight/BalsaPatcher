@@ -1,0 +1,6 @@
+A patcher for the balsa demo to restore features.  
+  
+Place inside Balsa/balsa_Data/Managed/ and run!  
+  
+Compiling:  
+Restore the packages and compile, it has no external dependanices apart from Mono.Cecil.

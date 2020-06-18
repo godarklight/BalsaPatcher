@@ -1,0 +1,69 @@
+ModCFG
+{
+	title = Base Game Content - Parts
+	author = Floating Origin Interactive
+	modVersion = 0.1.0
+	leastGameVersion = 0.20.0
+	Parts
+	{
+		part = Addons/basegame/parts/lg_single_strut.cfg
+		part = Addons/basegame/parts/prop_2blades.cfg
+		part = Addons/basegame/parts/smoke_emitter.cfg
+		part = Addons/basegame/parts/lg_single_center.cfg
+		part = Addons/basegame/parts/reflexSight.cfg
+		part = Addons/basegame/parts/cone_r0.cfg
+		part = Addons/basegame/parts/aa_gun.cfg
+		part = Addons/basegame/parts/cone_typeR1_round.cfg
+		part = Addons/basegame/parts/fuelTank_small.cfg
+		part = Addons/basegame/parts/cone_typeA.cfg
+		part = Addons/basegame/parts/wing_morph_std.cfg
+		part = Addons/basegame/parts/engine_fuel_puttmaster.cfg
+		part = Addons/basegame/parts/fairing_typeA_motorCowling.cfg
+		part = Addons/basegame/parts/cockpit_typeN_boxy.cfg
+		part = Addons/basegame/parts/fairing_radial_engine.cfg
+		part = Addons/basegame/parts/cockpit_typeB_bomber.cfg
+		part = Addons/basegame/parts/prop_4blades_R0.cfg
+		part = Addons/basegame/parts/cone_typeM_pointy.cfg
+		part = Addons/basegame/parts/fairing_typeN_12cyl.cfg
+		part = Addons/basegame/parts/fuselage_mid_typeB.cfg
+		part = Addons/basegame/parts/cockpit_typeR1_twoseater.cfg
+		part = Addons/basegame/parts/fuse_adapter_morph.cfg
+		part = Addons/basegame/parts/fuselage_mid_typeN_windows.cfg
+		part = Addons/basegame/parts/tail_TypeB.cfg
+		part = Addons/basegame/parts/cockpit_typeA_typeB.cfg
+		part = Addons/basegame/parts/cone_typeA_fairing.cfg
+		part = Addons/basegame/parts/fuselage_mid_typeN.cfg
+		part = Addons/basegame/parts/cockpit_typeR1_typeM.cfg
+		part = Addons/basegame/parts/gunPod_thud.cfg
+		part = Addons/basegame/parts/cockpit_typeR1_oneseater.cfg
+		part = Addons/basegame/parts/motor_electric_tiny.cfg
+		part = Addons/basegame/parts/wing_morph_small.cfg
+		part = Addons/basegame/parts/fairing_typeM_turboprop.cfg
+		part = Addons/basegame/parts/fuelTank_N.cfg
+		part = Addons/basegame/parts/wing_morph_flap_medium.cfg
+		part = Addons/basegame/parts/gunPod_hailstorm.cfg
+		part = Addons/basegame/parts/cone_typeB_glassNose.cfg
+		part = Addons/basegame/parts/tail_TypeN.cfg
+		part = Addons/basegame/parts/cockpit_typeM_canopy.cfg
+		part = Addons/basegame/parts/cone_typeN.cfg
+		part = Addons/basegame/parts/cone_typeB_fairing.cfg
+		part = Addons/basegame/parts/seat_basic.cfg
+		part = Addons/basegame/parts/prop_triblade.cfg
+		part = Addons/basegame/parts/fuselage_mid_typeB_windows.cfg
+		part = Addons/basegame/parts/fuselage_mid_typeB_bombbay.cfg
+		part = Addons/basegame/parts/fuselage_mid_typeA.cfg
+		part = Addons/basegame/parts/cone_typeM_fairing.cfg
+		part = Addons/basegame/parts/cone_typeB.cfg
+		part = Addons/basegame/parts/motor_electric_medium.cfg
+		part = Addons/basegame/parts/battery_small.cfg
+		part = Addons/basegame/parts/wing_morph_swept.cfg
+		part = Addons/basegame/parts/wing_morph_long.cfg
+		part = Addons/basegame/parts/wing_morph_delta.cfg
+		part = Addons/basegame/parts/wing_morph_sweptInv.cfg
+	}
+	Figures
+	{
+		figure = Addons/basegame/parts/majormal.cfg
+		figure = Addons/basegame/parts/green_dude.cfg
+	}
+}

@@ -61,6 +61,7 @@ namespace Balsa
 
             //Get pluginInfos
             FieldReference pluginInfosReference = modcfgType.Fields.First(field => field.Name == "pluginInfos");
+            pluginInfosReference.Resolve().IsPublic = true;
 
 
             //Allow us to write into locals

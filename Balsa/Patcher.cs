@@ -70,14 +70,18 @@ namespace Balsa
             foreach (PatchInterface pi in patchesToApply)
             {
                 bool patchResult = true;
+#if !DEBUG
                 try
                 {
+#endif
                     patchResult = pi.Patch(assembly);
+#if !DEBUG
                 }
                 catch
                 {
                     patchResult = false;
                 }
+#endif
                 if (!patchResult)
                 {
                     Console.WriteLine($"Patch: {pi.GetName()} failed to apply");

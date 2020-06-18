@@ -33,6 +33,8 @@
     <Compile Include="PartPatch.cs" />
     <Compile Include="AssemblyLoaderPatch1.cs" />
     <Compile Include="AssemblyLoaderPatch2.cs" />
+    <Compile Include="ActionFigureTool.cs" />
+    <Compile Include="DecalTool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

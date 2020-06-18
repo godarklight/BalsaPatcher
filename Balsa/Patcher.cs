@@ -16,26 +16,19 @@ namespace Balsa
                 Console.WriteLine("Unable to find Assembly-CSharp.dll, please place this in the balsa/balsa_Data/Managed folder.");
                 return;
             }
-            Console.WriteLine($"This will patch {fileToPatch} and will also create a backup. Type 'yes, I want to patch' to continue");
-            //string response = Console.ReadLine();
-            string response = "yes, I want to patch";
             Backup(fileToPatch);
-            if (response == "yes, I want to patch")
+            if (!Patch(fileToPatch))
             {
-                if (!Patch(fileToPatch))
+                Console.WriteLine("Patch failed, won't save patched assembly.");
+            }
+            else
+            {
+                if (File.Exists($"{fileToPatch}.old"))
                 {
-                    Console.WriteLine("Patch failed, reverting");
-                    //Restore(fileToPatch);
+                    File.Delete($"{fileToPatch}.old");
                 }
-                else
-                {
-                    if (File.Exists($"{fileToPatch}.old"))
-                    {
-                        File.Delete($"{fileToPatch}.old");
-                    }
-                    File.Move(fileToPatch, $"{fileToPatch}.old");
-                    File.Move($"{fileToPatch}.patched", fileToPatch);
-                }
+                File.Move(fileToPatch, $"{fileToPatch}.old");
+                File.Move($"{fileToPatch}.patched", fileToPatch);
             }
         }
 
@@ -44,15 +37,6 @@ namespace Balsa
             if (!File.Exists(fileToPatch + ".original"))
             {
                 File.Copy(fileToPatch, fileToPatch + ".original");
-            }
-        }
-
-        private static void Restore(string fileToPatch)
-        {
-            if (File.Exists(fileToPatch + ".original"))
-            {
-                File.Delete(fileToPatch);
-                File.Copy(fileToPatch + ".original", fileToPatch);
             }
         }
 
@@ -85,7 +69,16 @@ namespace Balsa
             }
             foreach (PatchInterface pi in patchesToApply)
             {
-                if (!pi.Patch(assembly))
+                bool patchResult = true;
+                try
+                {
+                    patchResult = pi.Patch(assembly);
+                }
+                catch
+                {
+                    patchResult = false;
+                }
+                if (!patchResult)
                 {
                     Console.WriteLine($"Patch: {pi.GetName()} failed to apply");
                     allOk = false;

@@ -31,7 +31,8 @@
     <Compile Include="FindAllModsPatch.cs" />
     <Compile Include="PatchInterface.cs" />
     <Compile Include="PartPatch.cs" />
-    <Compile Include="AssemblyLoaderPatch.cs" />
+    <Compile Include="AssemblyLoaderPatch1.cs" />
+    <Compile Include="AssemblyLoaderPatch2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

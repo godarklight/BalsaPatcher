@@ -6,8 +6,8 @@
     <ProjectGuid>{5779FE29-FC2F-426A-9799-9D3F396F4C00}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Balsa</RootNamespace>
-    <AssemblyName>Balsa</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <AssemblyName>BalsaPatcher</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

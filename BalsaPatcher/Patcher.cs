@@ -10,39 +10,43 @@ namespace Balsa
     {
         public static void Main()
         {
-            string fileToPatch = "Assembly-CSharp.dll";
-            if (!File.Exists(fileToPatch))
+            if (!File.Exists("Assembly-CSharp.dll"))
             {
                 Console.WriteLine("Unable to find Assembly-CSharp.dll, please place this in the balsa/balsa_Data/Managed folder.");
                 return;
             }
-            Backup(fileToPatch);
-            if (!Patch(fileToPatch))
+            Backup();
+            if (Patch())
             {
-                Console.WriteLine("Patch failed, won't save patched assembly.");
+                Console.WriteLine("Done!");
             }
             else
             {
-                if (File.Exists($"{fileToPatch}.old"))
-                {
-                    File.Delete($"{fileToPatch}.old");
-                }
-                File.Move(fileToPatch, $"{fileToPatch}.old");
-                File.Move($"{fileToPatch}.patched", fileToPatch);
+                Console.WriteLine("Patch failed, restoring original.");
+                Restore();
             }
         }
 
-        private static void Backup(string fileToPatch)
+        private static void Backup()
         {
-            if (!File.Exists(fileToPatch + ".original"))
+            if (!File.Exists("Assembly-CSharp.dll.original"))
             {
-                File.Copy(fileToPatch, fileToPatch + ".original");
+                File.Copy("Assembly-CSharp.dll", "Assembly-CSharp.dll.original");
             }
         }
 
-        private static bool Patch(string fileToPatch)
+        private static void Restore()
         {
-            AssemblyDefinition assembly = AssemblyDefinition.ReadAssembly(fileToPatch);
+            if (File.Exists("Assembly-CSharp.dll"))
+            {
+                File.Delete("Assembly-CSharp.dll");
+            }
+            File.Copy("Assembly-CSharp.dll.original", "Assembly-CSharp.dll");
+        }
+
+        private static bool Patch()
+        {
+            AssemblyDefinition assembly = AssemblyDefinition.ReadAssembly("Assembly-CSharp.dll.original");
 
             bool allOk = true;
             List<Type> patches = new List<Type>();
@@ -94,7 +98,7 @@ namespace Balsa
             }
             if (allOk)
             {
-                assembly.Write($"{fileToPatch}.patched");
+                assembly.Write("Assembly-CSharp.dll");
             }
             return allOk;
         }
